@@ -128,12 +128,12 @@ describe('UserController E2E tests', () => {
     });
   });
 
-  // describe('DELETE /users/:id', () => {
-  //   it('should delete a user', async () => {
-  //     const response = await request(app.getHttpServer())
-  //       .delete(`/users/${users[0].id}`)
-  //       .expect(HttpStatus.NO_CONTENT)
-  //       .expect({});
-  //   });
-  // });
+  describe('DELETE /users/:id', () => {
+    it('should delete a user', async () => {
+      const response = await request(app.getHttpServer())
+        .delete(`/users/${users[0].id}`)
+        .expect(HttpStatus.NO_CONTENT)
+        .expect({});
+    });
+  });
 });
