@@ -11,7 +11,7 @@ import { UserPermission } from '../user-permission/entities/user-permission.enti
     TypeOrmModule.forRootAsync({
       useFactory: async (configService: ConfigService) => {
         return {
-          type: 'mysql',
+          type: 'postgres',
           host: configService.get('DB_HOST'),
           port: Number(configService.get('DB_PORT')),
           username: configService.get('DB_USER'),
