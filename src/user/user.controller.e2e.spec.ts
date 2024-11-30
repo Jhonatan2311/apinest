@@ -18,7 +18,10 @@ describe('UserController E2E tests', () => {
   let users: User[];
 
   const dataSourceTest: DataSourceOptions = {
-    type: 'postgres',
+    type: (process.env.DB_TYPE || 'postgres') as
+      | 'mysql'
+      | 'mariadb'
+      | 'postgres',
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     username: process.env.DB_USER,
